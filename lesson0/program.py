@@ -20,7 +20,7 @@ if user != 'kaium':
 # !=    Не равно
 # =     Присвоение
 num = 20
-if num < 15:  # 10 < 15
+if num < 15:  # 20 < 15
     print("Меньше, чем 15")
 if num >= 20:
     print("Python - code")
