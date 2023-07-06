@@ -20,8 +20,13 @@ class Camera:
 
     def scan(self, human):
         print("---------------------")
+        print(f"Камера {self.floor} этаж {self.model}-{self.orientir}")
+        # Улучшить метод scan, чтобы в начале видеть
+        # этаж, модель и ориентир камеры
         if human.name in self.people:  # распознование
-            print("Человек распознан")
+            # Если человек распознан, то вывести его имя
+            # рядом с сообщением "Человек распознан"
+            print(f"Человек распознан - {human.name}")
             if self.floor in human.floor_accesses:
                 print("Доступ разрешён")
                 print(self.message(human))
