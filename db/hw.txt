@@ -1,0 +1,39 @@
+-- 1
+SELECT model
+FROM Printer
+WHERE price = (SELECT MIN(price) FROM Printer)
+
+-- 2 
+SELECT model, speed
+FROM Laptop
+WHERE screen = (SELECT MAX(screen) FROM Laptop)
+
+-- 3
+SELECT COUNT(*)
+FROM PC
+
+-- 4 
+SELECT COUNT(maker)
+FROM (
+SELECT DISTINCT maker
+FROM Product) AS T1
+
+-- 5
+SELECT code, model, type
+FROM Printer
+WHERE color = 'y'
+AND price = (
+  SELECT MAX(price)
+  FROM Printer
+  WHERE color = 'y'
+)
+
+-- 6
+SELECT AVG(price)
+FROM PC
+WHERE ram = 128
+
+-- 7 
+SELECT model
+FROM PC
+WHERE price > 800

@@ -1,0 +1,6 @@
+# templates/list.html
+<h2>Список пользователей</h2>
+
+{% for user in users %}
+    <div>{{ user.username }}</div>
+{% endfor %}
