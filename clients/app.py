@@ -42,5 +42,11 @@ def order_detail(id):
     return render_template('order_detail.html', order_object=order_object)
 
 
+@app.route("/clients")
+def clients():
+    clients_query = db.session.execute(db.select(Client)).scalars()
+    return render_template('clients.html', clients=clients_query)
+
+
 with app.app_context():
     db.create_all()
